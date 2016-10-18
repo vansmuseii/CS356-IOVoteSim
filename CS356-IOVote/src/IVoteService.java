@@ -50,6 +50,7 @@ public class IVoteService {
             System.out.printf("Student %s answered : %s\n", students, Arrays.toString(output));
         }
     }
+    // prints the results onto the overall answers.
     public void showResults (Question question){
         Set <String> answers = question.answerPool().keySet();
         System.out.println();
