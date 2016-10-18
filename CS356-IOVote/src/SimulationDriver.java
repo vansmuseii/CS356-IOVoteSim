@@ -26,9 +26,9 @@ public class SimulationDriver {
         System.out.print("\n");
         switch (choice){
             case 1:
-                question = iVote.newQuestion("What is the weather like today?", "Hot", "Cold");
+                question = iVote.newQuestion("Does this make me look fat?", "Right", "Wrong");
                 for (int i = 0; i < 30; i++) {
-                    String ans [] = {"Hot", "Cold"};
+                    String ans [] = {"Right", "Wrong"};
                     Student stud = new Student();
                     iVote.submitAnswers(stud.getID(), ans[r.nextInt(2)], question);
                 }
