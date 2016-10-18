@@ -32,8 +32,8 @@ public class SimulationDriver {
                     Student stud = new Student();
                     iVote.submitAnswers(stud.getID(), ans[r.nextInt(2)], question);
                 }
-                iVote.showLiveData(question);
-                iVote.showResults(question);
+                iVote.showLiveData(question.getDataStore().submittedAnswers());
+                iVote.showResults(question.getDataStore().answerPool());
                 break;
             case 2:
                 String[] poll = {"A: 1", "B: 3", "C: 7", "D: 9", "E: 11", "F: 31"};
@@ -59,8 +59,8 @@ public class SimulationDriver {
                     }
                     iVote.submitAnswers(stud.getID(),submit.substring(1,submit.length()), question);
                 }
-                iVote.showLiveDateMul(question);
-                iVote.showResults(question);
+                iVote.showLiveDataMul(question.getDataStore().submittedAnswers());
+                iVote.showResults(question.getDataStore().answerPool());
                 break;
             default:
                 System.out.println("Invalid input! Closing!");

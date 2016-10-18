@@ -17,9 +17,11 @@ public class SingleChoice implements Question{
     // These hash maps are used to store the answers submitted,
     // and the number submitted.
 
+    DataStorage d = new DataStorage();
     HashMap<String, String> studentAns = new HashMap<>();
     HashMap<String, Integer> ansBank;
     private String question;
+
 
     public SingleChoice (String givenQuestion, String first, String second){
         question = givenQuestion;
@@ -39,21 +41,21 @@ public class SingleChoice implements Question{
                 ansBank.put(change, ansBank.get(change)-1);
                 studentAns.put(studentID, ans);
                 ansBank.put(ans, ansBank.get(ans)+1);
+                d.setSubmitted(studentAns);
+                d.setPool(ansBank);
             }
             else {
                 studentAns.put(studentID, ans);
                 ansBank.put(ans, ansBank.get(ans) + 1);
+                d.setSubmitted(studentAns);
+                d.setPool(ansBank);
             }
         }
     }
 
     @Override
-    public HashMap submittedAnswers() {
-        return studentAns;
+    public DataStorage getDataStore() {
+        return d;
     }
 
-    @Override
-    public HashMap answerPool(){
-        return ansBank;
-    }
 }

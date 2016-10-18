@@ -32,9 +32,9 @@ public class IVoteService {
 
     // Shows the life data for single choice.
 
-    public void showLiveData(Question question){
-        HashMap submittedAns = question.submittedAnswers();
-        Set <String> studentIDs = question.submittedAnswers().keySet();
+    public void showLiveData(HashMap d){
+        HashMap submittedAns = d;
+        Set <String> studentIDs = d.keySet();
         System.out.println();
         for (String students:studentIDs) {
             System.out.printf("Student %s answered : %s\n", students, submittedAns.get(students));
@@ -43,9 +43,9 @@ public class IVoteService {
 
     // Shows the live data for multiple choice.
 
-    public void showLiveDateMul(Question question){
-        HashMap submittedAns = question.submittedAnswers();
-        Set <String> studentIDs = question.submittedAnswers().keySet();
+    public void showLiveDataMul(HashMap d){
+        HashMap submittedAns = d;
+        Set <String> studentIDs = d.keySet();
         System.out.println();
         for (String students:studentIDs) {
             Object val = submittedAns.get(students);
@@ -56,11 +56,11 @@ public class IVoteService {
 
     // Prints the results onto the overall answers.
 
-    public void showResults (Question question){
-        Set <String> answers = question.answerPool().keySet();
+    public void showResults (HashMap d){
+        Set <String> answers = d.keySet();
         System.out.println();
         for (String ans: answers) {
-            System.out.printf("The number submitted for %s is: %d\n", ans,question.answerPool().get(ans));
+            System.out.printf("The number submitted for %s is: %d\n", ans,d.get(ans));
         }
     }
 }

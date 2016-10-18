@@ -21,6 +21,7 @@ public class MultipleChoice implements Question{
     HashMap<String, String[]> studentAns = new HashMap<>();
     HashMap<String, Integer> ansBank;
     private String question;
+    DataStorage d = new DataStorage();
 
     public MultipleChoice (String givenQuestion, String [] ans){
         question = givenQuestion;
@@ -44,21 +45,20 @@ public class MultipleChoice implements Question{
             studentAns.put(studentID, ansArr);
             for (String s: ansArr)
                 ansBank.put(s, ansBank.get(s)+1);
+            d.setSubmitted(studentAns);
+            d.setPool(ansBank);
         }
         else {
             studentAns.put(studentID, ansArr);
             for (String s : ansArr)
                 ansBank.put(s, ansBank.get(s) + 1);
+            d.setSubmitted(studentAns);
+            d.setPool(ansBank);
         }
     }
 
     @Override
-    public HashMap submittedAnswers() {
-        return studentAns;
-    }
-
-    @Override
-    public HashMap answerPool() {
-        return ansBank;
+    public DataStorage getDataStore() {
+        return d;
     }
 }

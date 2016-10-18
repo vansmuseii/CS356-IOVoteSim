@@ -10,12 +10,9 @@
  *
  */
 
-import java.util.HashMap;
-
-public interface Question {
+public interface Question{
 
     void submit(String studentID, String ans);
-    HashMap submittedAnswers();
-    HashMap answerPool();
+    DataStorage getDataStore();
 }
 
