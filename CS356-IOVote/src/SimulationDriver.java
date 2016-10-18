@@ -19,6 +19,8 @@ public class SimulationDriver {
         Scanner keyBoard = new Scanner(System.in);
         IVoteService iVote = new IVoteService();
 
+        // Gives a choice of either multiple or single choice.
+
         System.out.print("Please enter your choice: (1) Single Choice or (2) Multiple Choice: ");
         int choice = keyBoard.nextInt();
         System.out.print("\n");
