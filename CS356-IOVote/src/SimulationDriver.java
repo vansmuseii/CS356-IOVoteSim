@@ -17,25 +17,25 @@ public class SimulationDriver {
         Random r = new Random();
         Question question;
         Scanner keyBoard = new Scanner(System.in);
-        IVoteService ivote = new IVoteService();
+        IVoteService iVote = new IVoteService();
 
         System.out.print("Please enter your choice: (1) Single Choice or (2) Multiple Choice: ");
         int choice = keyBoard.nextInt();
         System.out.print("\n");
         switch (choice){
             case 1:
-                question = ivote.newQuestion("What is the weather like today?", "Hot", "Cold");
+                question = iVote.newQuestion("What is the weather like today?", "Hot", "Cold");
                 for (int i = 0; i < 30; i++) {
                     String ans [] = {"Hot", "Cold"};
                     Student stud = new Student();
-                    ivote.submitAnswers(stud.getID(), ans[r.nextInt(2)], question);
+                    iVote.submitAnswers(stud.getID(), ans[r.nextInt(2)], question);
                 }
-                ivote.showLiveData(question);
-                ivote.showResults(question);
+                iVote.showLiveData(question);
+                iVote.showResults(question);
                 break;
             case 2:
                 String[] poll = {"A: 1", "B: 3", "C: 7", "D: 9", "E: 11", "F: 31"};
-                question = ivote.newQuestion("What number am I thinking of?", poll );
+                question = iVote.newQuestion("What number am I thinking of?", poll );
                 for (int i = 0; i < 30; i++) {
                     Student stud = new Student();
                     ArrayList<String> ans = new ArrayList<>();
@@ -55,10 +55,10 @@ public class SimulationDriver {
                     for (String grab: ans){
                         submit = submit + " " + grab;
                     }
-                    ivote.submitAnswers(stud.getID(),submit.substring(1,submit.length()), question);
+                    iVote.submitAnswers(stud.getID(),submit.substring(1,submit.length()), question);
                 }
-                ivote.showLiveDateMul(question);
-                ivote.showResults(question);
+                iVote.showLiveDateMul(question);
+                iVote.showResults(question);
                 break;
             default:
                 System.out.println("Invalid input! Closing!");
