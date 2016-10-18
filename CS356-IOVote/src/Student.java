@@ -3,8 +3,8 @@
  *      Author: Van Steven Muse II
  *      Class: CS 356 - Object Oriented Programming and Design
  *
- *      Assignment: Assigment 1
- *      Date Last Modified: 10/14/2016
+ *      Assignment: Assignment 1
+ *      Date Last Modified: 10/18/2016
  *
  *      Purpose: This file is supposed to hold the information of the student
  *              for the IVote service.
@@ -17,9 +17,11 @@ public class Student {
 
     private String studentID;
 
-    public Student (){
+    public Student() {
         Random r = new Random();
-        studentID = Integer.toString(r.nextInt(Integer.MAX_VALUE));
+        studentID = Integer.toString(r.nextInt(30)+1);
     }
-
+    public String getID(){
+        return studentID;
+    }
 }
