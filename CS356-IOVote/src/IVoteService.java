@@ -38,6 +38,8 @@ public class IVoteService {
             System.out.printf("Student %s answered : %s\n", students, submittedAns.get(students));
         }
     }
+
+    //Trying to figure out a best way to overload this method
     public void showLiveDateMul(Question question){
         HashMap submittedAns = question.submittedAnswers();
         Set <String> studentIDs = question.submittedAnswers().keySet();
