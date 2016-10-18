@@ -30,6 +30,8 @@ public class IVoteService {
         return question;
     }
 
+    // Shows the life data for single choice.
+
     public void showLiveData(Question question){
         HashMap submittedAns = question.submittedAnswers();
         Set <String> studentIDs = question.submittedAnswers().keySet();
@@ -39,7 +41,8 @@ public class IVoteService {
         }
     }
 
-    //Trying to figure out a best way to overload this method
+    // Shows the live data for multiple choice.
+
     public void showLiveDateMul(Question question){
         HashMap submittedAns = question.submittedAnswers();
         Set <String> studentIDs = question.submittedAnswers().keySet();
@@ -50,7 +53,9 @@ public class IVoteService {
             System.out.printf("Student %s answered : %s\n", students, Arrays.toString(output));
         }
     }
-    // prints the results onto the overall answers.
+
+    // Prints the results onto the overall answers.
+
     public void showResults (Question question){
         Set <String> answers = question.answerPool().keySet();
         System.out.println();

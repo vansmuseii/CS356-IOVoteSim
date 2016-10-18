@@ -14,6 +14,9 @@ import java.util.HashMap;
 
 public class SingleChoice implements Question{
 
+    // These hash maps are used to store the answers submitted,
+    // and the number submitted.
+
     HashMap<String, String> studentAns = new HashMap<>();
     HashMap<String, Integer> ansBank;
     private String question;
@@ -23,6 +26,8 @@ public class SingleChoice implements Question{
         ansBank = new HashMap<>();
         ansBank.put(first, 0);
         ansBank.put(second, 0);
+        System.out.printf("The given question is: %s\n", question);
+        System.out.printf("The given answers is: %s or %s\n\n", first, second);
     }
 
     @Override

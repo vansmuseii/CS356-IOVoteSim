@@ -6,15 +6,16 @@
  *      Assignment: Assignment 1
  *      Date Last Modified: 10/18/2016
  *
- *      Purpose: This file is supposed to hold the questions and answers.
+ *      Purpose: This file is supposed to hold the questions and answers of data.
  *
  */
 
 import java.util.HashMap;
 
 public interface Question {
-    public void submit(String studentID, String ans);
-    public HashMap submittedAnswers();
-    public HashMap answerPool();
+
+    void submit(String studentID, String ans);
+    HashMap submittedAnswers();
+    HashMap answerPool();
 }
 

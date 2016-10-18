@@ -10,9 +10,13 @@
  *
  */
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class MultipleChoice implements Question{
+
+    // These hash maps are used to store the answers submitted,
+    // and the number submitted.
 
     HashMap<String, String[]> studentAns = new HashMap<>();
     HashMap<String, Integer> ansBank;
@@ -20,9 +24,12 @@ public class MultipleChoice implements Question{
 
     public MultipleChoice (String givenQuestion, String [] ans){
         question = givenQuestion;
+        System.out.printf("The given question is: %s\n", question);
+        System.out.printf("The possible answers are: %s", Arrays.toString(ans));
+        System.out.println("\n");
         ansBank = new HashMap<>();
-        for (String possbile:ans)
-            ansBank.put(possbile.substring(0, 1), 0);
+        for (String possible:ans)
+            ansBank.put(possible.substring(0, 1), 0);
     }
 
     @Override
